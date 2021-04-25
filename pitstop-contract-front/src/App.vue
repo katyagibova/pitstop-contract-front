@@ -1,60 +1,147 @@
 <template>
   <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
+    <v-app-bar 
+    app
+    color="#9E9E9E"
+    style="color:#fff;"
+    flat
     >
       <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+        <h1>PITSTOP</h1>
       </div>
-
       <v-spacer></v-spacer>
 
+
+      <v-text-field
+      placeholder="Поиск"
+      clearable
+      style="max-width:500px"
+      dark
+      class="mt-3"
+      />
       <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
+      icon
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+        <v-icon
+        size="30"
+        color="white"
+        >mdi-magnify</v-icon>
+      </v-btn>
+      <v-btn icon>
+          <v-icon
+          color="#fff">
+            mdi-account-circle-outline
+          </v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon
+        size="30"
+        color="white"
+        >mdi-exit-to-app</v-icon>
       </v-btn>
     </v-app-bar>
 
     <v-main>
-      <HelloWorld/>
+      <v-navigation-drawer
+      v-model="drawer"
+      permanent
+      expand-on-hover
+      absolute
+      color="#9E9E9E"
+      style="color:white"
+      hide-overlay
+      >
+      <v-list nav dense
+      >
+          <v-list-item-group
+          >
+            <v-list-item
+              v-for="(item, i) in menuItems"
+              :key="i"
+              exact
+              :to="item.route"
+            >
+              <v-list-item-icon>
+                <v-icon
+                :color="item.color"
+                >{{ item.icon }}</v-icon>
+              </v-list-item-icon>
+
+              <v-list-item-content>
+                <v-list-item-title
+                style="color:white; font-weight:bald; font-size:16px"
+                >{{ item.label }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
+
+    <div class="container">
+      <router-view
+      style="margin-left:56px"
+      >  
+      </router-view>
+    </div>
+    
+
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
 
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
   },
 
-  data: () => ({
-    //
-  }),
+  data() {
+    return {
+      drawer: true,
+      mini: true,
+      menuItems: [
+        {
+          route: { name: "Home" },
+          label: "Главная",
+          icon: 'mdi-home',
+          color: "#fff"
+        },
+        {
+          route: { path: "/product" },
+          label: "Товары",
+          icon: 'mdi-shopping-outline',
+          color: "#fff"
+        },
+        {
+          route: { path: "/vendor" },
+          label: "Поставщики",
+          icon: 'mdi-truck-delivery',
+          color: "#fff"
+        },
+        {
+          route: { path: "/contract" },
+          label: "Контракты",
+          icon: 'mdi-file-document',
+          color: "#fff"
+        },
+      ],
+    };
+  },
+  watch: {
+    $route() {
+      this.drawer = false;
+    },
+  },
 };
 </script>
+
+<style scoped>
+.container{
+  max-width: 1180px;
+  margin: 0 auto;
+}
+  
+</style>
