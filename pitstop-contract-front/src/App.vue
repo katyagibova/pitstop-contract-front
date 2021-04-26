@@ -78,7 +78,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <div class="container">
+    <div >
       <router-view
       style="margin-left:56px"
       >  
