@@ -35,7 +35,28 @@
             :search="srh"
             item-key="id"
           >
+
+            <template
+            v-slot:item.openBtn="{ item }">
+              <v-btn icon @click="openContractCard(item)">
+                <v-icon color="#5374FF"> mdi-card-bulleted </v-icon>
+              </v-btn>
+            </template>
           </v-data-table>
+
+          <template>
+            <v-dialog v-model="dialog"
+            fullscreen
+            hide-overlay
+            transition="dialog-bottom-transition"
+            >
+              <ContractCard 
+              :productID="this.selectedContractToOpen"
+              @close="close"
+              :key="new Date().getUTCSeconds()" />
+              
+            </v-dialog>
+          </template>
         </v-card>
       </v-row>
     </v-col>
@@ -45,10 +66,13 @@
 <script>
 import Axios from "axios";
 import { GET_CONTRACTS } from "@/api";
+import ContractCard from "./ContractCard/index"
 
 export default {
   name: "ContractTable",
-  components: {},
+  components: {
+    ContractCard
+  },
   data() {
     return {
       isLoad: true,
@@ -56,6 +80,9 @@ export default {
       contracts: [],
       selected: [],
       srh: "",
+      selectedContractToOpen: null,
+      selectedProductIndex: -1,
+      dialog: false,
     };
   },
   methods: {
@@ -68,6 +95,17 @@ export default {
       } finally {
         this.isLoad = false;
       }
+    },
+    openContractCard(item){
+      this.selectedContractToOpen = item.id;
+      this.dialog = true;
+    },
+    close() {
+      this.dialog = false;
+      this.$nextTick(() => {
+        this.selectedContractToOpen = null;
+        this.selectedProductIndex = -1;
+      });
     },
   },
   created() {
@@ -138,8 +176,8 @@ export default {
           width: 40,
         },
         {
-          text: "Кнопки",
-          value: "productCreateCard",
+          text: "Кнопка",
+          value: "openBtn",
           align: "center",
           sortable: false,
           width: 40,
@@ -171,5 +209,9 @@ export default {
   font-size: 12px;
   line-height: 13px;
   color: #fff;
+}
+
+.v-modal {
+  z-index: 100 !important;
 }
 </style>
