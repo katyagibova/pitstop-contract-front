@@ -10,6 +10,29 @@ const routes = [
     name: 'Home',
     component: Home,
   },
+  {
+    path: "/contract-details/:contractID",
+    component: () => import("@/components/ContractTable/ContractCard"),
+
+    children: [
+      {
+        path: "/",
+        component: () => import("@/components/ContractTable/ContractCard/ContractData"),
+      },
+      // {
+      //   path: "history",
+      //   component: () => import("@/components/ProductDetails/Warehouses"),
+      // },
+      // {
+      //   path: "documents",
+      //   component: () => import("@/components/ProductDetails/Log"),
+      // },
+      // {
+      //   path: "termination",
+      //   component: () => import("@/components/ProductDetails/Vendors"),
+      // },
+    ],
+  },
 ]
 
 const router = new VueRouter({

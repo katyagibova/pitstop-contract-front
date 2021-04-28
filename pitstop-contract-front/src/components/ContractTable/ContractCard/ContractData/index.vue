@@ -1,6 +1,11 @@
 <template>
   <v-container>
-    <h1>hdbgsgv</h1>
+      <h1>vdsivbwov</h1>
+      <h1>vdsivbwov</h1>
+      <h1>vdsivbwov</h1>
+      <h1>vdsivbwov</h1>
+      <h1>{{this.contractID}}</h1>
+    
   </v-container>
 </template>
 
@@ -8,6 +13,7 @@
 export default {
   name: "ContractData",
   components: {},
+  props:["contractID"],
   data() {
     return {};
   },
