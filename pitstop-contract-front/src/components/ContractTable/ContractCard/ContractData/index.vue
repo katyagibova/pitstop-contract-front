@@ -4,7 +4,7 @@
       <h1>vdsivbwov</h1>
       <h1>vdsivbwov</h1>
       <h1>vdsivbwov</h1>
-      <h1>{{this.contractID}}</h1>
+      <h1>{{this.$route.params.contractID}}</h1>
     
   </v-container>
 </template>

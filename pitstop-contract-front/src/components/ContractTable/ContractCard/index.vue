@@ -7,7 +7,7 @@
         centered
         dark
         icons-and-text
-        >        
+        >
             <v-tabs-slider></v-tabs-slider>
 
             <v-tab
@@ -31,6 +31,7 @@
             <v-card flat>
 
               <router-view />
+             
 
             </v-card>
         </v-tab-item>
@@ -44,7 +45,6 @@ export default {
   name: 'ContractCard',
   components: {
   },
-  props:["contractID"],
   data () {
       return {
         tab: null,

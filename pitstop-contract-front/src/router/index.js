@@ -20,15 +20,15 @@ const routes = [
         component: () => import("@/components/ContractTable/ContractCard/ContractData"),
       },
       // {
-      //   path: "history",
+      //   path: "/history",
       //   component: () => import("@/components/ProductDetails/Warehouses"),
       // },
       // {
-      //   path: "documents",
+      //   path: "/documents",
       //   component: () => import("@/components/ProductDetails/Log"),
       // },
       // {
-      //   path: "termination",
+      //   path: "/termination",
       //   component: () => import("@/components/ProductDetails/Vendors"),
       // },
     ],

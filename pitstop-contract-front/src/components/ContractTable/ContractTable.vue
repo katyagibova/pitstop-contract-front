@@ -127,25 +127,13 @@
 
             <template
             v-slot:[`item.openBtn`]="{ item }">
-              <v-btn icon @click="openContractCard(item)">
+              <v-btn 
+              icon
+              :to="`/contract-details/${item.id}/`">
                 <v-icon color="#5374FF"> mdi-card-bulleted </v-icon>
               </v-btn>
             </template>
           </v-data-table>
-
-          <template>
-            <v-dialog v-model="dialog"
-            fullscreen
-            hide-overlay
-            transition="dialog-bottom-transition"
-            >
-              <ContractCard 
-              :contractID="this.selectedContractToOpen"
-              @close="close"
-              :key="new Date().getUTCSeconds()" />
-              
-            </v-dialog>
-          </template>
         </v-card>
       </v-row>
     </v-col>
@@ -155,12 +143,11 @@
 <script>
 import Axios from "axios";
 import { GET_CONTRACTS, GET_CONTRACTSTYPES, GET_PAYMENTTYPES, GET_PAYMENTVIEWS, GET_SPECIFICATIONS, GET_STATUSES } from "@/api";
-import ContractCard from "./ContractCard/index"
+
 
 export default {
   name: "ContractTable",
   components: {
-    ContractCard
   },
   data() {
     return {
