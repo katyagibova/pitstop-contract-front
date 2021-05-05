@@ -29,14 +29,14 @@
             :value="'tab-' + i"
         >
             <v-card flat>
-
-              <router-view />
-             
-
+              
             </v-card>
+
         </v-tab-item>
         </v-tabs-items>
+        <router-view />
     </v-card>   
+    
 </template>
 
 <script>
