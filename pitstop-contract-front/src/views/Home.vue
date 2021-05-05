@@ -1,52 +1,25 @@
 <template>
   <div class="home">
-    <v-col>
-      <v-row>
-        <v-col cols="1">
-            <v-btn
-            class="btn"
-            color="#5374FF"> Поиск </v-btn>
-        </v-col>
-        <v-col cols="1">
-            <v-btn
-            class="btn"
-            color="#5374FF">Архив</v-btn>
-        </v-col>
-        <v-spacer></v-spacer>
-        <v-col cols="1">
-            <v-btn
-            class="btn"
-            color="#5374FF">История</v-btn>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col cols="12">
-          <ContractTable />
-        </v-col>
-        
-      </v-row>
-    </v-col>
+    <h1 class="main_title">Main page</h1>
     
   </div>
 </template>
 
 <script>
-import ContractTable from '../components/ContractTable/ContractTable.vue'
 
 export default {
   name: 'Home',
   components: {
-    ContractTable
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.link{
-  text-decoration: none;
+.main_title{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn{
-  color: #fff;
-}
 </style>

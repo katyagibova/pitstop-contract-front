@@ -1,14 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import ContractsPage from '../views/ContractsPage.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/contract',
+    path: '/',
     name: 'Home',
     component: Home,
+  },
+  {
+    path: '/contract',
+    name: 'ContractsPage',
+    component: ContractsPage,
   },
   {
     path: "/contract-details/:contractID",
@@ -23,10 +29,10 @@ const routes = [
       //   path: "/history",
       //   component: () => import("@/components/ProductDetails/Warehouses"),
       // },
-      // {
-      //   path: "/documents",
-      //   component: () => import("@/components/ProductDetails/Log"),
-      // },
+      {
+        path: "/documents",
+        component: () => import("@/components/ContractTable/ContractCard/ContractDocuments"),
+      },
       // {
       //   path: "/termination",
       //   component: () => import("@/components/ProductDetails/Vendors"),

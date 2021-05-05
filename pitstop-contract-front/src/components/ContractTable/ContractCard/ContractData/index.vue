@@ -2,7 +2,7 @@
   <v-container>
     <v-col>
       <v-row class="heading">
-        <h3>Номер контракта: {{contract.contractNumber }}</h3>
+        <h3>Номер контракта: {{contractData.contractNumber }}</h3>
       </v-row>
       <v-row class="main_data_content">
         <v-col cols="6">
@@ -15,7 +15,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="{contract.vendorName}"
+                  :value="this.contractData.vendorName"
                   label="Solo"
                   solo
                   readonly
@@ -32,7 +32,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.contractType"
                   label="Solo"
                   solo
                   readonly
@@ -49,7 +49,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.contractQuantity"
                   label="Solo"
                   solo
                   readonly
@@ -66,7 +66,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.contracrCost"
                   label="Solo"
                   solo
                   readonly
@@ -83,7 +83,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.vendorBIC"
                   label="Solo"
                   solo
                   readonly
@@ -100,7 +100,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.vendorEGRUL"
                   label="Solo"
                   solo
                   readonly
@@ -117,7 +117,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.vendorINN"
                   label="Solo"
                   solo
                   readonly
@@ -134,7 +134,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.specification"
                   label="Solo"
                   solo
                   readonly
@@ -154,7 +154,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.contractConclusionDate"
                   label="Solo"
                   solo
                   readonly
@@ -171,7 +171,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.contractStartDate"
                   label="Solo"
                   solo
                   readonly
@@ -188,7 +188,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.contractExpireDate"
                   label="Solo"
                   solo
                   readonly
@@ -205,7 +205,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.actualContractPrise"
                   label="Solo"
                   solo
                   readonly
@@ -222,7 +222,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.paymentType"
                   label="Solo"
                   solo
                   readonly
@@ -239,7 +239,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.status"
                   label="Solo"
                   solo
                   readonly
@@ -256,7 +256,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.lastChangeDate"
                   label="Solo"
                   solo
                   readonly
@@ -273,7 +273,7 @@
             <v-col cols="6">
               <v-row>
                 <v-text-field
-                  value="John Doe"
+                  :value="this.contractData.deliveryTime"
                   label="Solo"
                   solo
                   readonly
