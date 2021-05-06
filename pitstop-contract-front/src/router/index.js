@@ -18,19 +18,23 @@ const routes = [
   },
   {
     path: "/contract-details/:contractID",
+    name: 'ContractCard',
     component: () => import("@/components/ContractTable/ContractCard"),
 
     children: [
       {
         path: "/",
+        name: 'ContractData',
         component: () => import("@/components/ContractTable/ContractCard/ContractData"),
       },
-      // {
-      //   path: "/history",
-      //   component: () => import("@/components/ProductDetails/Warehouses"),
-      // },
+      {
+        path: "/history",
+        name: 'ContractHistory',
+        component: () => import("@/components/ContractTable/ContractCard/ContractHistory"),
+      },
       {
         path: "/documents",
+        name: 'ContractDocuments',
         component: () => import("@/components/ContractTable/ContractCard/ContractDocuments"),
       },
       // {

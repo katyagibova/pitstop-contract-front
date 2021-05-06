@@ -1,5 +1,5 @@
 <template>
-    <v-card>
+    <div>
         
       <v-tabs
       v-model="tab"
@@ -13,7 +13,8 @@
         <v-tab
         v-for="(item, i) in tabs" 
         :key="i"
-        :to="item.to" 
+        :to="item.to"
+        :href="'#tab-' + i"
         exact 
         >
           {{ item.label }}
@@ -22,7 +23,7 @@
         
       </v-tabs>
 
-      <v-tabs-items v-model="tab">
+      <v-tabs-items>
         <v-tab-item
           v-for="i in tabs"
           :key="i"
@@ -37,7 +38,7 @@
       </v-tabs-items>
 
       <router-view />
-    </v-card>
+    </div>
 </template>
 
 <script>
