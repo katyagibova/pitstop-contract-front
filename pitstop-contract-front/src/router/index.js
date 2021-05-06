@@ -23,24 +23,25 @@ const routes = [
 
     children: [
       {
-        path: "/",
+        path: "",
         name: 'ContractData',
         component: () => import("@/components/ContractTable/ContractCard/ContractData"),
       },
       {
-        path: "/history",
+        path: "history",
         name: 'ContractHistory',
         component: () => import("@/components/ContractTable/ContractCard/ContractHistory"),
       },
       {
-        path: "/documents",
+        path: "documents",
         name: 'ContractDocuments',
         component: () => import("@/components/ContractTable/ContractCard/ContractDocuments"),
       },
-      // {
-      //   path: "/termination",
-      //   component: () => import("@/components/ProductDetails/Vendors"),
-      // },
+      {
+        path: "termination",
+        name: 'ContractTermination',
+        component: () => import("@/components/ContractTable/ContractCard/ContractTermination"),
+      },
     ],
   },
 ]

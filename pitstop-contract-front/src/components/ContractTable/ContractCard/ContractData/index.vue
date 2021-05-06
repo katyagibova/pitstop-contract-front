@@ -1,9 +1,6 @@
 <template>
   <v-container>
     <v-col>
-      <v-row class="heading">
-        <h3>Номер контракта: {{contractData.contractNumber }}</h3>
-      </v-row>
       <v-row class="main_data_content">
         <v-col cols="6">
           <v-row>
@@ -331,20 +328,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.heading{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-h3{
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-}
-
 .main_data_content{
-  margin-top: 35px;
+  margin-top: 25px;
 }
 
 .name_field{

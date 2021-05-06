@@ -123,7 +123,7 @@
                   ></v-select>
                 </td>
               </tr>
-          </template>
+            </template>
 
             <template
             v-slot:[`item.openBtn`]="{ item }">

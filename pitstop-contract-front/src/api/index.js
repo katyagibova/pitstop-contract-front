@@ -11,5 +11,6 @@ export const GET_PAYMENTTYPES = addIP("/get-all-paymenttypes");
 export const GET_PAYMENTVIEWS = addIP("/get-all-paymentviews");
 export const GET_SPECIFICATIONS = addIP("/get-all-specifications");
 export const GET_STATUSES = addIP("/get-all-statuses");
+export const GET_CONTRACT_LOGS = addIP("/get-contract-logs");
 
 export const UPDATE_CONTRACT_DETAILS = addIP("/update-contract-details");

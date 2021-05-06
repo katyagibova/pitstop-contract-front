@@ -14,7 +14,6 @@
         v-for="(item, i) in tabs" 
         :key="i"
         :to="item.to"
-        :href="'#tab-' + i"
         exact 
         >
           {{ item.label }}
@@ -22,26 +21,17 @@
         </v-tab>
         
       </v-tabs>
-
-      <v-tabs-items>
-        <v-tab-item
-          v-for="i in tabs"
-          :key="i"
-          :value="'tab-' + i"
-        >
-          <v-card flat>
-                
-          </v-card>
-
-        </v-tab-item>
-        
-      </v-tabs-items>
+      <v-row class="heading">
+        <h3>Номер контракта: {{contractData.contractNumber }}</h3>
+      </v-row>
 
       <router-view />
     </div>
 </template>
 
 <script>
+import Axios from "axios";
+import { GET_CONTRACT_BY_ID } from "@/api";
 
 export default {
   name: 'ContractCard',
@@ -71,12 +61,51 @@ export default {
             to: `/contract-details/${this.$route.params.contractID}/termination`,
             icon: "mdi-lock-open-remove-outline"
           },
-        ]
+        ],
+        isErr: false,
+        isLoading: true,
+        contractData: {},
       }
     },
+  methods: {
+    async getContractByID() {
+      try {
+        const { data: contractData } = await Axios.get(GET_CONTRACT_BY_ID,{
+          params: {
+            id: this.contractID,
+          }
+        });
+        this.contractData = contractData;
+      } catch {
+        this.isErr = true;
+      } finally {
+        this.isLoading = false;
+      }
+    },
+  },
+  created(){
+    this.getContractByID();
+  },
+  computed:{
+    contractID() {
+      return this.$route.params.contractID;
+    },
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+.heading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+h3{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+}
 
 </style>
