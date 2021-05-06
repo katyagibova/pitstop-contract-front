@@ -1,25 +1,26 @@
 <template>
-  <div >
-    <h2>ucvuv ugjviu uoihloi</h2>
-    <h2>ucvuv ugjviu uoihloi</h2>
-    <h2>ucvuv ugjviu uoihloi</h2>
-    <h2>ucvuv ugjviu uoihloi</h2>
-    <h2>ucvuv ugjviu uoihloi</h2>
-    <h2>ucvuv ugjviu uoihloi</h2>
+  <v-container>
+    <v-row>
+      <v-col cols="4">
+        <DocumentCard />
+      </v-col>
+
+    </v-row>
     
-  </div>
+  </v-container>
 </template>
 
 <script>
+import DocumentCard from './DocumentCard.vue'
 
 export default {
   name: 'ContractDocuments',
   components: {
+    DocumentCard
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
 
 </style>
