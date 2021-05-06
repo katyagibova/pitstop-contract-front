@@ -20,18 +20,22 @@ export default {
         {
           text: "",
           value: "",
+          align: "center"
         },
         {
           text: "Поле",
           value: "poleName",
+          align: "center"
         },
         {
           text: "Изначальное значение",
           value: "oldValue",
+          align: "center"
         },
         {
           text: "Новое значение",
           value: "newValue",
+          align: "center"
         },
       ],
     };

@@ -1,32 +1,31 @@
 <template>
   <v-container>
       <v-row>
-      <v-spacer />
-      <v-col cols="8">
-        <v-data-table
-      :headers="historyTableHeaders"
-      :items="contractHistory"
-      item-key="date"
-      :loading="isLoad"
-      show-expand
-      single-expand >
+        <v-spacer />
+        <v-col cols="8">
+            <v-data-table
+            :headers="historyTableHeaders"
+            :items="contractHistory"
+            item-key="date"
+            :loading="isLoad"
+            show-expand
+            single-expand >
 
-        <template 
-        v-slot:expanded-item="{ headers, item }">
-            <td class="inside" 
-            :colspan="headers.length">
-                <ContractChanges
-                :actions="item.actions"
-                />
-            </td>
-        </template>
+                <template 
+                v-slot:expanded-item="{ headers, item }">
+                    <td class="inside" 
+                    :colspan="headers.length">
+                        <ContractChanges
+                        :actions="item.actions"
+                        />
+                    </td>
+                </template>
 
-      </v-data-table>
+            </v-data-table>
 
-      </v-col>
-      <v-spacer />
-      </v-row>
-     
+        </v-col>
+        <v-spacer />
+      </v-row>     
   </v-container>
 </template>
 
@@ -74,7 +73,7 @@ export default {
             },
             {
                 text: "Действие",
-                value: "actions",
+                value: "actionType",
                 align: "center",
             },
             {
