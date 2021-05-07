@@ -2,7 +2,8 @@
   <v-container>
     <v-col>
       <v-row class="main_data_content">
-        <v-col cols="6">
+        <v-spacer></v-spacer>
+        <v-col cols="5">
           <v-row>
             <v-col cols="6" class="name_field">
               <v-row >
@@ -141,7 +142,7 @@
           </v-row>
 
         </v-col>
-        <v-col cols="6">
+        <v-col cols="5">
           <v-row>
             <v-col cols="6" class="name_field">
               <v-row >
@@ -280,6 +281,7 @@
           </v-row>
 
         </v-col>
+        <v-spacer></v-spacer>
       </v-row>
     </v-col>
     

@@ -33,6 +33,7 @@
             :headers="tableHeaders"
             :items="contracts"
             :search="srh"
+            :loading="isLoad"
             item-key="id"
           >
             <template v-slot:[`body.prepend`]>
@@ -356,11 +357,11 @@ export default {
           },
         },
         {
-          text: "Кнопка",
+          text: "Открыть карточку контракта",
           value: "openBtn",
           align: "center",
           sortable: false,
-          width: 40,
+          width: 60,
         },
       ];
     },

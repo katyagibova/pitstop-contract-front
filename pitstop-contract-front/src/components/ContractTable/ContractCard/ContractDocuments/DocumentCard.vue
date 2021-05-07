@@ -19,7 +19,7 @@ export default {
     return {
       isErr: false,
       isLoading: true,
-      contractDocumentData: {},
+      contractDocumentData: [],
     };
   },
   methods: {
@@ -27,7 +27,7 @@ export default {
       try {
         const { data: contractDocumentData } = await Axios.get(GET_CONTRACT_DOCUMENTS_BY_ID,{
           params: {
-            idC: this.contractID,
+            id: this.contractID,
           }
         });
         this.contractDocumentData = contractDocumentData;
@@ -57,5 +57,7 @@ export default {
   border-radius: 11.3433px;
 }
 
-
+p{
+  margin: 0;
+}
 </style>

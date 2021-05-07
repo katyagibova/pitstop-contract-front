@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import ContractsPage from '../views/ContractsPage.vue'
+import AllContractsHistory from '../components/AllContractsHistory'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes = [
     path: '/contract',
     name: 'ContractsPage',
     component: ContractsPage,
+  },
+  {
+    path: '/contract-history',
+    name: 'AllContractsHistory',
+    component: AllContractsHistory,
   },
   {
     path: "/contract-details/:contractID",

@@ -31,7 +31,7 @@
 
 <script>
 import Axios from "axios";
-import { GET_CONTRACT_LOGS } from "@/api";
+import { GET_CONTRACT_LOG_BY_ID } from "@/api";
 import ContractChanges from './ContractChanges.vue';
 
 export default {
@@ -49,7 +49,11 @@ export default {
   methods:{
       async getContractLogs() {
       try {
-        const { data: contractHistory } = await Axios.get(GET_CONTRACT_LOGS);
+        const { data: contractHistory } = await Axios.get(GET_CONTRACT_LOG_BY_ID,{
+          params: {
+            id: this.contractID,
+          }
+        });
         this.contractHistory = contractHistory;
       } catch {
         this.isErr = true;
@@ -59,6 +63,9 @@ export default {
     },
   },
   computed:{
+    contractID() {
+      return this.$route.params.contractID;
+    },
       historyTableHeaders(){
         return[
             {

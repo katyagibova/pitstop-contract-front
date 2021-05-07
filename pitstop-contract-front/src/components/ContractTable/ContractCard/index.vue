@@ -22,7 +22,7 @@
         
       </v-tabs>
       <v-row class="heading">
-        <h3>Номер контракта: {{contractData.contractNumber }}</h3>
+        <h3>Номер контракта: {{contractData.contractNumber }} and {{contractData.id}}</h3>
       </v-row>
 
       <router-view />
