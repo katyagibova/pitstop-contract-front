@@ -31,7 +31,6 @@
       <v-row>
         <v-col cols="12">
           <router-view />
-          <!-- <ContractTable /> -->
         </v-col>
         
       </v-row>
@@ -41,12 +40,10 @@
 </template>
 
 <script>
-// import ContractTable from '../components/ContractTable/ContractTable.vue'
 
 export default {
   name: 'ContractsPage',
   components: {
-    // ContractTable
   }
 }
 </script>
