@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import ContractsPage from '../views/ContractsPage.vue'
 import AllContractsHistory from '../components/AllContractsHistory'
+import ContractTable from '../components/ContractTable/ContractTable.vue'
+import ContractArchive from '../components/ContractArchive/index.vue'
 
 Vue.use(VueRouter)
 
@@ -16,6 +18,18 @@ const routes = [
     path: '/contract',
     name: 'ContractsPage',
     component: ContractsPage,
+    children: [
+      {
+        path: "/table",
+        name: 'ContractTable',
+        component: ContractTable,
+      },
+      {
+        path: "/archive",
+        name: 'ContractArchive',
+        component: ContractArchive,
+      },
+    ]
   },
   {
     path: '/contract-history',

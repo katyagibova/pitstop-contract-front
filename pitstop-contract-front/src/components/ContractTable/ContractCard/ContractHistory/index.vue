@@ -10,7 +10,6 @@
             :loading="isLoad"
             show-expand
             single-expand >
-
                 <template 
                 v-slot:expanded-item="{ headers, item }">
                     <td class="inside" 
@@ -20,7 +19,6 @@
                         />
                     </td>
                 </template>
-
             </v-data-table>
 
         </v-col>

@@ -3,14 +3,18 @@
     <v-col>
       <v-row >
         <v-col cols="1">
+          <router-link to="/table" class="link">
             <v-btn
             class="btn"
             color="#5374FF"> Поиск </v-btn>
+          </router-link>
         </v-col>
         <v-col cols="1">
+          <router-link to="/archive" class="link">
             <v-btn
             class="btn"
             color="#5374FF">Архив</v-btn>
+          </router-link>
         </v-col>
         <v-spacer></v-spacer>
         <v-col cols="1">
@@ -23,9 +27,11 @@
 
         </div>
       </v-row>
+      
       <v-row>
         <v-col cols="12">
-          <ContractTable />
+          <router-view />
+          <!-- <ContractTable /> -->
         </v-col>
         
       </v-row>
@@ -35,12 +41,12 @@
 </template>
 
 <script>
-import ContractTable from '../components/ContractTable/ContractTable.vue'
+// import ContractTable from '../components/ContractTable/ContractTable.vue'
 
 export default {
   name: 'ContractsPage',
   components: {
-    ContractTable
+    // ContractTable
   }
 }
 </script>
